@@ -1,4 +1,7 @@
+import 'dart:developer';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:crypto_wallet/UI/Home.dart';
 import 'package:crypto_wallet/Utils/const_colors.dart';
 import 'package:crypto_wallet/model/TransactionModel.dart';
 import 'package:crypto_wallet/model/UserModel.dart';
@@ -43,14 +46,16 @@ class AuthProvider with ChangeNotifier {
         });
     try {
       await Auth.signInWithEmailAndPassword(
-          email: emailController.text, password: passwordController.text);
-      Navigator.pop(context);
+              email: emailController.text, password: passwordController.text)
+          .then((value) {
+        Navigator.pop(context);
+      });
     } on FirebaseAuthException catch (e) {
       Navigator.pop(context);
       if (e.code == 'user-not-found') {
-        errorMessage(context, title: "Incorrect Email");
+        errorMessage(context, title: "User Not Found");
       } else if (e.code == 'wrong-password') {
-        errorMessage(context, title: "Wrong Password");
+        errorMessage(context, title: "Incorrect Email or Password");
       }
     }
   }
@@ -64,7 +69,16 @@ class AuthProvider with ChangeNotifier {
     try {
       if (passwordController.text == confirmPasswordController.text) {
         await Auth.createUserWithEmailAndPassword(
-            email: emailController.text, password: passwordController.text);
+                email: emailController.text, password: passwordController.text)
+            .then((value) async {
+          await storeUserData(
+              context,
+              UserModel(
+                  email: emailController.text,
+                  password: passwordController.text,
+                  fullName: fullNameController.text));
+          Navigator.of(context).pushNamedAndRemoveUntil(Home.routename, (route) => false);
+        });
       } else {
         errorMessage(context, title: "Password don't match!");
       }
@@ -72,9 +86,9 @@ class AuthProvider with ChangeNotifier {
     } on FirebaseAuthException catch (e) {
       Navigator.pop(context);
       if (e.code == 'user-not-found') {
-        errorMessage(context, title: "Incorrect Email");
+        errorMessage(context, title: "User Not Found");
       } else if (e.code == 'wrong-password') {
-        errorMessage(context, title: "Wrong Password");
+        errorMessage(context, title: "Incorrect Email or Password");
       }
     }
   }
@@ -83,41 +97,42 @@ class AuthProvider with ChangeNotifier {
     var cred =
         EmailAuthProvider.credential(email: email, password: oldPassword);
 
-      await currentUser?.reauthenticateWithCredential(cred).then((value) {
-        currentUser?.updatePassword(newPassword).whenComplete(() {
-          Auth.signOut();
-        });
-      }).catchError((e){
-        print(e.toString());
+    await currentUser?.reauthenticateWithCredential(cred).then((value) {
+      currentUser?.updatePassword(newPassword).whenComplete(() {
+        Auth.signOut();
       });
+    }).catchError((e) {
+      log(e.toString());
+    });
   }
 
   resetPassword({required BuildContext context, email}) async {
     try {
-      await Auth.sendPasswordResetEmail(email: email);
-      await errorMessage(context,
-          title: 'Password reset link sent! Check your email');
+      await Auth.sendPasswordResetEmail(email: email).then((value) =>
+          errorMessage(context,
+              title: 'Password reset link sent! Check your email'));
     } on FirebaseAuthException catch (e) {
-      print(e);
+      log(e.toString());
       errorMessage(context, title: e.message.toString());
     }
   }
 
   //Store user Data in FireStore
-  createUser(BuildContext context, UserModel user) async {
-    await _db
-        .collection("Users")
-        .add(user.toJson())
-        .whenComplete(() => VxToast.show(context,
-            msg: "Success, You account has been created.",
-            position: VxToastPosition.bottom,
-            textColor: ConstColors.green))
-        .catchError((e, stackTrace) {
+  storeUserData(BuildContext context, UserModel user) async {
+    try {
+      await _db.collection("Users").add(user.toJson()).whenComplete(
+            () => VxToast.show(context,
+                msg: "Success, You account has been created.",
+                position: VxToastPosition.bottom,
+                textColor: ConstColors.green),
+          );
+    } on FirebaseFirestore catch (e) {
+      log(e.toString());
       VxToast.show(context,
           msg: "Error, Something went wrong. Try again",
           position: VxToastPosition.bottom,
           textColor: ConstColors.red);
-    });
+    }
   }
 
   //Fetch Data from Firestore

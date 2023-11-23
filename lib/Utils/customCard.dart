@@ -1,5 +1,4 @@
 import 'package:crypto_wallet/UI/verification_confirm.dart';
-import 'package:feather_icons_flutter/feather_icons_flutter.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -41,7 +40,7 @@ class customCard extends StatelessWidget {
                 10.widthBox,
                 title.text.fontWeight(FontWeight.bold).size(19).make(),
                 Spacer(),
-                Icon(FeatherIcons.arrowRight)
+                Icon(Icons.arrow_right)
               ],
             ),
           ),
@@ -193,7 +192,7 @@ Widget smallFilterCard({required Widget child, required Function onTap}) {
         children: [
           child,
           5.widthBox,
-          Icon(FeatherIcons.chevronDown, size: 15,color: ConstColors.darkGrey,).pOnly(top: 5,right: 5)
+          Icon(Icons.arrow_drop_down, size: 15,color: ConstColors.darkGrey,).pOnly(top: 5,right: 5)
         ],
       ).pOnly(top: 5,bottom: 5,left: 10, right: 8),
     ),

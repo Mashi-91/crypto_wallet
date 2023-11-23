@@ -1,6 +1,5 @@
 import 'package:crypto_wallet/model/UserModel.dart';
 import 'package:crypto_wallet/provider/auth_provider.dart';
-import 'package:feather_icons_flutter/feather_icons_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:provider/provider.dart';
@@ -16,11 +15,12 @@ class SignUpScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final prov = Provider.of<AuthProvider>(context);
+    final sizeHeight = MediaQuery.of(context).size * 1;
     return Scaffold(
       body: SingleChildScrollView(
         child: SafeArea(
           child: SizedBox(
-            height: 810,
+            height: /*810*/ sizeHeight.height,
             child: Column(
               children: [
                 Column(
@@ -85,8 +85,8 @@ class SignUpScreen extends StatelessWidget {
                                           prov.toggleVisible();
                                         },
                                         icon: prov.isVisible
-                                            ? Icon(FeatherIcons.eye)
-                                            : Icon(FeatherIcons.eyeOff)),
+                                            ? const Icon(Icons.visibility)
+                                            : const Icon(Icons.visibility_off)),
                                   ),
                                 ),
                                 TextFormField(
@@ -102,20 +102,15 @@ class SignUpScreen extends StatelessWidget {
                                           prov.toggleVisible();
                                         },
                                         icon: prov.isVisible
-                                            ? Icon(FeatherIcons.eye)
-                                            : Icon(FeatherIcons.eyeOff)),
+                                            ? const Icon(Icons.visibility)
+                                            : const Icon(Icons.visibility_off)),
                                   ),
                                 ),
                               ],
                             ),
-                            Spacer(),
+                            const Spacer(),
                             CustomButton("Let's Get Started",
                                 ConstColors.primaryBlue, Colors.white, () {
-                              final user = UserModel(
-                                email: prov.emailController.text.trim(),
-                                  password: prov.passwordController.text.trim(),
-                                  fullName: prov.fullNameController.text.trim());
-                              prov.createUser(context, user);
                               prov.signUserUp(context);
                             }),
                             20.heightBox,
@@ -130,7 +125,7 @@ class SignUpScreen extends StatelessWidget {
                                     .color(ConstColors.primaryBlue)
                                     .make()
                                     .onTap(() {
-                                      Navigator.pop(context);
+                                  Navigator.pop(context);
                                 })
                               ],
                             )

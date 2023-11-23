@@ -4,7 +4,6 @@ import 'package:crypto_wallet/Utils/const_colors.dart';
 import 'package:crypto_wallet/model/Model.dart';
 import 'package:crypto_wallet/model/UserModel.dart';
 import 'package:crypto_wallet/provider/auth_provider.dart';
-import 'package:feather_icons_flutter/feather_icons_flutter.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/cupertino.dart';
@@ -43,12 +42,12 @@ class drawer extends StatelessWidget {
           //         fontSize: 15)),
           60.heightBox,
           CustomTile(
-              Icon(FeatherIcons.home, size: 28, color: ConstColors.lightGrey),
+              Icon(Icons.home, size: 28, color: ConstColors.lightGrey),
               "Wallet",
               () => walletTap()),
           30.heightBox,
           CustomTile(
-              Icon(FeatherIcons.plusCircle,
+              Icon(Icons.add_circle,
                   size: 28, color: ConstColors.lightGrey),
               "Deposit",
               () {}),
@@ -66,20 +65,20 @@ class drawer extends StatelessWidget {
               () {}),
           30.heightBox,
           CustomTile(
-              Icon(FeatherIcons.shuffle,
+              Icon(Icons.shuffle,
                   size: 28, color: ConstColors.lightGrey),
               "Exchange",
               () {}),
           30.heightBox,
           CustomTile(
-              Icon(FeatherIcons.user, size: 28, color: ConstColors.lightGrey),
+              Icon(Icons.person, size: 28, color: ConstColors.lightGrey),
               "Profile", () {
             Navigator.of(context).pushNamed(ProfileScreen.routename);
           }),
           Spacer(),
           CustomTile(
               Icon(
-                FeatherIcons.logOut,
+                Icons.logout,
                 size: 28,
                 color: ConstColors.lightGrey,
               ),

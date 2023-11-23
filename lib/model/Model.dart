@@ -1,7 +1,7 @@
 import 'package:crypto_wallet/Utils/const_colors.dart';
 import 'package:crypto_wallet/provider/provider.dart';
-import 'package:feather_icons_flutter/feather_icons_flutter.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class onboard extends ManageProvider{
@@ -40,7 +40,7 @@ List<onboard> data = [
 get _data => data;
 
 final card = [
-  cardModel( Icon(FeatherIcons.creditCard),"National ID"),
+  cardModel( Icon(Icons.credit_card),"National ID"),
   cardModel(SvgPicture.asset('assets/illustrations/earth.svg'),"Passport",),
   cardModel(SvgPicture.asset('assets/illustrations/car.svg',height: 20,width: 20,color: ConstColors.darkGrey,),"Driver's Licence"),
 ];

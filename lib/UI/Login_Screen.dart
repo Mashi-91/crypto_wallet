@@ -3,7 +3,6 @@ import 'package:crypto_wallet/UI/PasswordForgot/pass_forgot_screen.dart';
 import 'package:crypto_wallet/UI/sign_up_screen.dart';
 import 'package:crypto_wallet/Utils/CustomButton.dart';
 import 'package:crypto_wallet/Utils/const_colors.dart';
-import 'package:feather_icons_flutter/feather_icons_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:provider/provider.dart';
@@ -79,8 +78,8 @@ class LoginScreen extends StatelessWidget {
                                             prov.toggleVisible();
                                           },
                                           icon: prov.isVisible
-                                              ? Icon(FeatherIcons.eye)
-                                              : Icon(FeatherIcons.eyeOff))),
+                                              ? const Icon(Icons.visibility)
+                                              : const Icon(Icons.visibility_off))),
                                 ),
                                 10.heightBox,
                                 "Forgot your password?"
@@ -94,13 +93,13 @@ class LoginScreen extends StatelessWidget {
                                 })
                               ],
                             ),
-                            (size.height * 0.2).heightBox,
+                            (size.height * 0.18).heightBox,
                             CustomButton(
                                 'Login', ConstColors.primaryBlue, Colors.white,
                                 () {
                               prov.signUserIn(context);
                             }),
-                            15.heightBox,
+                            (size.height * 0.01).heightBox,
                             Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
@@ -118,7 +117,7 @@ class LoginScreen extends StatelessWidget {
                                           builder: (_) => SignUpScreen()));
                                 })
                               ],
-                            )
+                            ),
                           ],
                         ),
                       ),

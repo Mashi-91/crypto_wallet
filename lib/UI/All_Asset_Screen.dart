@@ -1,6 +1,5 @@
 import 'package:crypto_wallet/Utils/customCard.dart';
 import 'package:crypto_wallet/provider/auth_provider.dart';
-import 'package:feather_icons_flutter/feather_icons_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:velocity_x/velocity_x.dart';
@@ -30,7 +29,7 @@ class AllAssetScreen extends StatelessWidget {
                         Navigator.of(context).pop();
                       },
                       child: const Icon(
-                        FeatherIcons.arrowLeft,
+                        Icons.arrow_left,
                         color: Colors.black,
                       ),
                     ),
@@ -64,7 +63,7 @@ class AllAssetScreen extends StatelessWidget {
                             ], onChanged: (va){},
                               underline: Container(),
                               borderRadius: BorderRadius.circular(16),
-                              icon: Icon(FeatherIcons.chevronDown, size: 15,).pOnly(top: 5,left: 2),
+                              icon: Icon(Icons.arrow_drop_down, size: 15,).pOnly(top: 5,left: 2),
                             ).pOnly(left: 10),
                             DropdownButton(
                               items: const [
@@ -72,7 +71,7 @@ class AllAssetScreen extends StatelessWidget {
                             ], onChanged: (va){},
                               underline: Container(),
                               borderRadius: BorderRadius.circular(16),
-                              icon: Icon(FeatherIcons.chevronDown, size: 15,).pOnly(top: 5,left: 2),
+                              icon: Icon(Icons.arrow_drop_down, size: 15,).pOnly(top: 5,left: 2),
                             ).pOnly(left: 10),
                           ],
                         ),

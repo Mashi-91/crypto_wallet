@@ -1,8 +1,9 @@
 import 'package:crypto_wallet/UI/Transaction_Screen.dart';
 import 'package:fancy_drawer/fancy_drawer.dart';
-import 'package:feather_icons_flutter/feather_icons_flutter.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:velocity_x/velocity_x.dart';
 
 import '../UI/Portfolio_Overview_Screen.dart';
 import '../UI/Portfolio_Screen.dart';
@@ -20,7 +21,7 @@ class ManageProvider extends ChangeNotifier {
   final items = [
     SvgPicture.asset('assets/illustrations/minimize-2.svg'),
     Icon(
-      FeatherIcons.box,
+      Icons.minimize_rounded,
       color: ConstColors.grey,
     )
   ];

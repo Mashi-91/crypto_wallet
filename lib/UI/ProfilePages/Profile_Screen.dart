@@ -4,7 +4,6 @@ import 'package:crypto_wallet/UI/ProfilePages/SecurityPages.dart';
 import 'package:crypto_wallet/Utils/const_colors.dart';
 import 'package:crypto_wallet/Utils/customCard.dart';
 import 'package:crypto_wallet/provider/auth_provider.dart';
-import 'package:feather_icons_flutter/feather_icons_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_switch/flutter_switch.dart';
 import 'package:provider/provider.dart';
@@ -28,7 +27,7 @@ class ProfileScreen extends StatelessWidget {
             left: 15,
             child: GestureDetector(
                 onTap: () => Navigator.pop(context),
-                child: Icon(FeatherIcons.arrowLeft)),
+                child: Icon(Icons.arrow_left)),
           ),
           Container(
             alignment: Alignment.bottomCenter,
@@ -135,7 +134,7 @@ Widget profileCard(
                           fontWeight: FontWeight.w600),
                     )
                   : ''.text.make(),
-              Icon(FeatherIcons.arrowRight)
+              Icon(Icons.arrow_right)
             ],
           ),
         ),

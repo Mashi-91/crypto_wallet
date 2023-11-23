@@ -14,7 +14,7 @@ dependencies:
     sdk: flutter
   cupertino_icons: ^1.0.2
   google_fonts:
-  feather_icons_flutter:
+#  feather_icons_flutter:
   onboarding:
   flutter_svg: ^2.0.4
   animated_bottom_navigation_bar:

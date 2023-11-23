@@ -1,6 +1,5 @@
 import 'package:crypto_wallet/model/Model.dart';
 import 'package:crypto_wallet/provider/provider.dart';
-import 'package:feather_icons_flutter/feather_icons_flutter.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_svg/svg.dart';
 

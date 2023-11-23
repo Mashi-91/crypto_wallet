@@ -1,5 +1,4 @@
 import 'package:crypto_wallet/UI/ProfilePages/Profile_Screen.dart';
-import 'package:feather_icons_flutter/feather_icons_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:flutter_switch/flutter_switch.dart';

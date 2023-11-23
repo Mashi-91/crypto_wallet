@@ -7,7 +7,6 @@ import 'package:crypto_wallet/Utils/drawer.dart';
 import 'package:crypto_wallet/model/UserModel.dart';
 import 'package:crypto_wallet/provider/auth_provider.dart';
 import 'package:fancy_drawer/fancy_drawer.dart';
-import 'package:feather_icons_flutter/feather_icons_flutter.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -65,7 +64,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                           onPressed: () {
                             provider.controller.toggle();
                           },
-                          icon: Icon(FeatherIcons.alignRight)),
+                          icon: Icon(Icons.subject)),
                     )
                   ],
                 ),
@@ -80,7 +79,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                   radius: 60,
                   child: IconButton(
                     icon: const Icon(
-                      FeatherIcons.plus,
+                      Icons.add,
                       color: Colors.white,
                       size: 35,
                     ),

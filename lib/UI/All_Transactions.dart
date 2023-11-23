@@ -3,7 +3,6 @@ import 'dart:ffi';
 import 'package:crypto_wallet/Utils/const_colors.dart';
 import 'package:crypto_wallet/Utils/customCard.dart';
 import 'package:crypto_wallet/model/TransactionModel.dart';
-import 'package:feather_icons_flutter/feather_icons_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';
@@ -34,7 +33,7 @@ class AllTransactionScreen extends StatelessWidget {
                         Navigator.of(context).pop();
                       },
                       child: const Icon(
-                        FeatherIcons.arrowLeft,
+                        Icons.arrow_left,
                         color: Colors.black,
                       ),
                     ),
@@ -51,11 +50,11 @@ class AllTransactionScreen extends StatelessWidget {
                           },
                           child: transactionProvider.istap
                               ? Icon(
-                                  FeatherIcons.x,
+                                  Icons.close,
                                   color: ConstColors.primaryBlue,
                                 )
                               : Icon(
-                                  FeatherIcons.filter,
+                                  Icons.filter_alt,
                                   color: ConstColors.primaryBlue,
                                 ))
                       .pOnly(right: 15)

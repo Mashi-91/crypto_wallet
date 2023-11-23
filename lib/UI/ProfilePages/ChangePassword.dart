@@ -2,7 +2,6 @@ import 'package:crypto_wallet/UI/Authenticate/auth_page.dart';
 import 'package:crypto_wallet/UI/Login_Screen.dart';
 import 'package:crypto_wallet/Utils/CustomButton.dart';
 import 'package:crypto_wallet/provider/auth_provider.dart';
-import 'package:feather_icons_flutter/feather_icons_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:velocity_x/velocity_x.dart';
@@ -65,8 +64,8 @@ class ChangePasswordScreen extends StatelessWidget {
                                             prov.toggleVisible();
                                           },
                                           icon: prov.isVisible
-                                              ? Icon(FeatherIcons.eye)
-                                              : Icon(FeatherIcons.eyeOff))),
+                                              ? Icon(Icons.visibility)
+                                              : Icon(Icons.visibility_off))),
                                 ),
                                 SizedBox(
                                   height: 20,
@@ -84,8 +83,8 @@ class ChangePasswordScreen extends StatelessWidget {
                                             prov.toggleVisible();
                                           },
                                           icon: prov.isVisible
-                                              ? Icon(FeatherIcons.eye)
-                                              : Icon(FeatherIcons.eyeOff))),
+                                              ? Icon(Icons.visibility)
+                                              : Icon(Icons.visibility_off))),
                                 ),
                                 SizedBox(
                                   height: 20,
@@ -103,8 +102,8 @@ class ChangePasswordScreen extends StatelessWidget {
                                             prov.toggleVisible();
                                           },
                                           icon: prov.isVisible
-                                              ? Icon(FeatherIcons.eye)
-                                              : Icon(FeatherIcons.eyeOff))),
+                                              ? Icon(Icons.visibility)
+                                              : Icon(Icons.visibility_off))),
                                 ),
                               ],
                             ),
