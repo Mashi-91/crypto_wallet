@@ -16,13 +16,26 @@ The Crypto Wallet App is a Flutter application designed to provide a seamless an
 
 ## Screenshots
 
-![Screenshot 1](screenshots/screenshot1.jpg)
-![Screenshot 1](screenshots/screenshot2.jpg)
-![Screenshot 1](screenshots/screenshot3.jpg)
-![Screenshot 1](screenshots/screenshot4.jpg)
-![Screenshot 1](screenshots/screenshot5.jpg)
-![Screenshot 1](screenshots/screenshot6.jpg)
-![Screenshot 1](screenshots/screenshot7.jpg)
-![Screenshot 1](screenshots/screenshot8.jpg)
-![Screenshot 1](screenshots/screenshot9.jpg)
-![Screenshot 1](screenshots/screenshot10.jpg)
+<div align="center">
+  <img src="screenshots/screenshot1.jpg" width="200" alt="Screenshot 1">
+  <img src="screenshots/screenshot2.jpg" width="200" alt="Screenshot 2">
+  <img src="screenshots/screenshot3.jpg" width="200" alt="Screenshot 3">
+</div>
+
+<div align="center">
+  <img src="screenshots/screenshot4.jpg" width="200" alt="Screenshot 4">
+  <img src="screenshots/screenshot5.jpg" width="200" alt="Screenshot 5">
+  <img src="screenshots/screenshot6.jpg" width="200" alt="Screenshot 6">
+</div>
+
+<div align="center">
+  <img src="screenshots/screenshot7.jpg" width="200" alt="Screenshot 7">
+  <img src="screenshots/screenshot8.jpg" width="200" alt="Screenshot 8">
+  <img src="screenshots/screenshot9.jpg" width="200" alt="Screenshot 9">
+</div>
+
+<div align="center">
+  <img src="screenshots/screenshot10.jpg" width="200" alt="Screenshot 10">
+  <!-- Add more screenshots as needed -->
+</div>
+
